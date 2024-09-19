@@ -4,7 +4,7 @@ from app.main import outdated_products
 
 
 @patch("app.main.datetime")
-def test_outdated_products(mock_datetime):
+def test_outdated_products(mock_datetime: callable) -> None:
     mock_datetime.date.today.return_value = datetime.date(2022, 2, 2)
 
     result = outdated_products([
